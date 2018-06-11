@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/pagesListFragment">
+
+    <fragment
+        android:id="@+id/pagesListFragment"
+        android:name="com.ekalips.navigatortest.pages.PagesListFragment"
+        android:label="Pages"
+        tools:layout="@layout/fragment_pages_list">
+        <action
+            android:id="@+id/viewPage"
+            app:destination="@id/pageFragment"/>
+        <deepLink app:uri="myapp.com" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageFragment"
+        android:name="com.ekalips.navigatortest.page.PageFragment"
+        android:label="Page"
+        tools:layout="@layout/fragment_page">
+        <argument
+            android:name="title"
+            app:type="string" />
+        <action
+            android:id="@+id/viewPageComments"
+            app:destination="@id/pageCommentsFragment"/>
+        <deepLink app:uri="myapp.com/{title}" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageCommentsFragment"
+        android:name="com.ekalips.navigatortest.comments.PageCommentsFragment"
+        android:label="Comments"
+        tools:layout="@layout/fragment_page_comments">
+        <argument
+            android:name="title"
+            app:type="string" />
+        <deepLink app:uri="myapp.com/{title}/comments" />
+    </fragment>
+</navigation>
