@@ -25,7 +25,7 @@
         <action
             android:id="@+id/viewPageComments"
             app:destination="@id/pageCommentsFragment"/>
-        <deepLink app:uri="myapp.com/{title}" />
+        <deepLink app:uri="myapp.com/test/path/param?title={title}" />
     </fragment>
     <fragment
         android:id="@+id/pageCommentsFragment"
