@@ -22,7 +22,7 @@ class PageFragment : Fragment() {
         rootView = inflater.inflate(R.layout.fragment_page, container, false) as ViewGroup
         initPageData(arguments ?: savedInstanceState)
         rootView.descTv.text = page?.second
-        rootView.commentsBtn.setOnClickListener { findNavController(this).navigate(PageFragmentDirections.viewPageComments(page?.first)) }
+        rootView.commentsBtn.setOnClickListener { findNavController(this).navigate(PageFragmentDirections.viewPageComments(page?.first?:"")) }
         return rootView
     }
 

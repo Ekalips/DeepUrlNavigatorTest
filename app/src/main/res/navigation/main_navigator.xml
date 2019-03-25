@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_page">
         <argument
             android:name="title"
-            app:type="string" />
+            app:argType="string" />
         <action
             android:id="@+id/viewPageComments"
             app:destination="@id/pageCommentsFragment"/>
@@ -34,7 +34,7 @@
         tools:layout="@layout/fragment_page_comments">
         <argument
             android:name="title"
-            app:type="string" />
+            app:argType="string" />
         <deepLink app:uri="myapp.com/{title}/comments" />
     </fragment>
 </navigation>
